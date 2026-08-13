@@ -1,0 +1,89 @@
+function plot_ex2_sos_moving(create_tikz)
+
+%% PARSE INPUT ARGUMENTS
+tikz = nargin > 0 && create_tikz;
+
+%% LOAD DATA
+data = load("data/ex2_sos_moving_results.mat");
+results = data.results;
+
+%% PLOTTING PARAMETERS
+% color scheme (greyscaled for publication)
+color1 = '#242424'; % blue
+color2 = '#4f4f4f'; % black
+color3 = '#797979'; % red
+
+%% CREATE FIGURE
+fighandle = figure();
+
+list_degree = results.list_degree;
+status_list = results.status;
+value_list  = results.upper_bound;
+built_time  = results.built_time;
+solve_time  = results.solve_time;
+
+%% PLOT UPPER BOUND (left y-axis)
+yyaxis left;
+plot(list_degree, value_list, '-', 'LineWidth', 1, 'MarkerSize', 8, 'Color', color1);
+hold on
+h = scatter(list_degree(status_list), value_list(status_list), 80, 'o', 'MarkerEdgeColor', color1);
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+h = scatter(list_degree(~status_list), value_list(~status_list), 80, 'diamond', 'filled', ...
+    'MarkerEdgeColor', color2, 'MarkerFaceColor', color2);
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+ylabel('Upper bound', 'FontSize', 12, 'Color', 'k');
+ylim([0, 1]);
+grid on;
+
+%% PLOT COMPUTATION TIMES (right y-axis)
+yyaxis right;
+semilogy(list_degree, built_time, '-.', 'LineWidth', 1, 'Color', color3);
+hold on
+semilogy(list_degree, solve_time, '--', 'LineWidth', 1, 'Color', color3);
+
+h = scatter(list_degree(status_list), built_time(status_list), 80, 'square', 'MarkerEdgeColor', color3);
+
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+h = scatter(list_degree(~status_list), built_time(~status_list), 80, 'diamond', 'filled', ...
+    'MarkerEdgeColor', color2, 'MarkerFaceColor', color2);
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+
+h = scatter(list_degree(status_list), solve_time(status_list), 80,'square', 'MarkerEdgeColor', color3);
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+h = scatter(list_degree(~status_list), solve_time(~status_list), 80, 'diamond', 'filled', ...
+    'MarkerEdgeColor', color2, 'MarkerFaceColor', color2);
+h.Annotation.LegendInformation.IconDisplayStyle = 'off';
+ylabel('time (s)', 'FontSize', 12, 'Color', 'k');
+
+% Dummy object for the legend
+if any(~status_list)
+    h = plot([NaN NaN], [NaN NaN], ...
+        'LineStyle', 'none', ...
+        'Marker', 'd', ...
+        'MarkerFaceColor', color2, ...
+        'MarkerEdgeColor', color2, ...
+        'MarkerSize', 8);
+    % Add a second marker (blue square) to the same object
+    h.MarkerIndices = [1 2];   % MATLAB doesn't allow different marker types/colors
+
+    legend('Upper bound', 'Build time', 'Solve time', ' Solver got issues');
+else
+    legend('Upper bound', 'Build time', 'Solve time');
+end
+
+ax = gca;
+ax.YAxis(1).Color = color1;
+ax.YAxis(2).Color = color3;
+ax.YAxis(2).Scale = 'log';
+
+% global setting
+xlabel('Relaxation order d', 'FontSize', 12);
+%legend('Upper bound', 'Build time', 'Solve time', ' Solver got issues');
+legend('Orientation', 'vertical');
+
+%% EXPORT TO TIKZ
+if tikz == 1
+    matlab2tikz('figures/ex2_stats_sos_moving.tex', 'figurehandle', fighandle, 'standalone', true);
+end
+
+end
