@@ -10,7 +10,7 @@ The following tools must be installed:
 
 1. Download [CasADi v3.6.7](https://web.casadi.org/get/) and add it to your MATLAB path.  
 2. Download and install [MOSEK v11.1.x](https://www.mosek.com/downloads/) and add the solver to the MATLAB path.  
-3. Get CaΣoS from **toDO**
+3. Download [CaΣoS](https://github.com/casos-opti/casos) and add it to your MATLAB path.
 
 Add the root folder (the one that contains the directory `+casos`) to your MATLAB path.
 
@@ -18,26 +18,11 @@ Add the root folder (the one that contains the directory `+casos`) to your MATLA
 
 ```text
 .
-│   ### Directories ###
-│ 
-├── fig/                        # Contains the figures used in the paper 
-├── results/                    # Saved .mat files
-├── utils/                      # Contains auxiliary functions
-│ 
-│   ### Scripts ###
-│   # Example 1
-├── ex01_1_meas.m               # ToDO
-├── ex01_1_sos_ambiguity.m      # ToDO
-├── ex01_1_sos.m                # ToDO
-│ 
-│   # Example 2
-├── ex02_meas.m                 # ToDO
-├── ex02_meas_moving.m          # ToDO
-├── ex02_sos_ambiguity.m        # ToDO
-├── ex02_sos.m                  # ToDO
-├── ex02_sos_moving.m           # ToDO
-├── ex02_sos_multiple.m         # ToDO
-│ 
+├── data/            # Saved results
+├── experiments/     # Scripts for the experiments
+├── figures/         # Figures and .tex files
+├── scripts/         # Auxiliary scripts
+├── utils/           # Helper functions 
 ├── LICENSE
 └── readme.md
 ```
