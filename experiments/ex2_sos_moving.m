@@ -1,16 +1,14 @@
 %% ------------------------------------------------------------------------
 %   
-%   Paper: 
+%   Paper: "Worst-Case Probability Bounds for Finite-Horizon Safety under 
+%          Moment Uncertainty"
 %
-%   Description: Orbit scenario in 2d to test the uncertainty propagation
-%                with polynomial approximation (SOS approach) 
-%                Consider a moving target
-%                      
+%   Description: Find the worst case probability given certain moments 
+%                associated with initial measure using a sum-of-squares 
+%                program. This example considers a unsafe set that is time 
+%                varying.
 %
-%   Needed software: - CasADi 3.6 
-%                    - CaΣoS
-%
-%   License: GNU GENERAL PUBLIC LICENSE Version 3. 
+%   License: GNU GENERAL PUBLIC LICENSE Version 3
 %
 % ------------------------------------------------------------------------
 

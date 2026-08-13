@@ -1,14 +1,13 @@
 %% ------------------------------------------------------------------------
 %   
-%   Paper: 
+%   Paper: "Worst-Case Probability Bounds for Finite-Horizon Safety under 
+%          Moment Uncertainty"
 %
-%   Description: 
-%                      
-%
-%   Needed software: - CasADi 3.6 
-%                    - CaΣoS
-%
-%   License: GNU GENERAL PUBLIC LICENSE Version 3. 
+%   Description: Find the worst case probability given certain ambiguity 
+%                set on the moments associated with initial measure using 
+%                a sum-of-squares program.
+%                
+%   License: GNU GENERAL PUBLIC LICENSE Version 3
 %
 % ------------------------------------------------------------------------
 
