@@ -1,3 +1,9 @@
+<p>
+      <img src="https://img.shields.io/badge/doi-10.18419%2Fdarus--6410-d45815.svg"/>
+    <img src="https://img.shields.io/badge/status-active-green"/>
+    <img src="https://img.shields.io/badge/License-GPLv3-red"/>
+    <img src="https://img.shields.io/badge/matlab-R2023b-orange"/>
+</p>
 # Introduction
 
 This repository contains code used in the paper *Worst-Case Probability Bounds for Finite-Horizon Safety under Moment Uncertainty*. It provides details on the implementation and a short user guide to reproduce the results of the paper.
@@ -9,7 +15,7 @@ This repository contains code used in the paper *Worst-Case Probability Bounds f
 The following tools must be installed:
 
 1. Download [CasADi v3.6.7](https://web.casadi.org/get/) and add it to your MATLAB path.  
-2. Download and install [MOSEK v11.1.x](https://www.mosek.com/downloads/) and add the solver to the MATLAB path.  
+2. Download and install [MOSEK v10.1.x](https://www.mosek.com/downloads/) and add the solver to the MATLAB path.  
 3. Download [CaΣoS](https://github.com/casos-opti/casos) and add it to your MATLAB path.
 
 Add the root folder (the one that contains the directory `+casos`) to your MATLAB path.
