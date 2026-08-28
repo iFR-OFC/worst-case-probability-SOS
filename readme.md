@@ -34,12 +34,20 @@ In case of problems, questions or remarks, please contact the corresponding auth
 
 
 ### Citation
-Please cite the paper as PREPRINT FOLLOWS SOON
+Please cite the paper as
+```
+@misc{loureiro2026,
+      title={Worst-Case Probability Bounds for Finite-Horizon Safety under Moment Uncertainty}, 
+      author={Renato Loureiro and Torbjørn Cunis},
+      year={2026},
+      eprint={2608.20121},
+      archivePrefix={arXiv},
+      primaryClass={math.OC},
+      url={https://arxiv.org/abs/2608.20121}, 
+}
 ```
 
-```
-
-The repository material can be cited with (SOON)
+The repository material can be cited with 
 ```
 @data{DARUS-6410_2026,
 author = {Loureiro, Renato and Cunis, Torbjørn},
